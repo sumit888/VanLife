@@ -5,6 +5,8 @@ import VanDetail from "./assets/pages/vans/VanDetail"
 import Dashboard from "./assets/host/Dashboard"
 import Income from "./assets/host/Income"
 import Reviews from "./assets/host/Reviews"
+import HostVans from "./assets/host/HostVans"
+import HostVanDetail from "./assets/host/HostVanDetail"
 
 import Layout from "./assets/components/Layout"
 import HostLayout from "./assets/components/HostLayout"
@@ -25,6 +27,8 @@ export default function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<HostVans />} />
+             <Route path="vans/:id" element={<HostVanDetail />} />
           </Route>
         </Route>
       </Routes>
