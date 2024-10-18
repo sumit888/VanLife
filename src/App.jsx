@@ -1,5 +1,5 @@
-import Home from "./assets/pages/vans/Home"
-import About from "./assets/pages/vans/About"
+import Home from "./assets/pages/Home"
+import About from "./assets/pages/About"
 import Vans from "./assets/pages/vans/Vans"
 import VanDetail from "./assets/pages/vans/VanDetail"
 import Dashboard from "./assets/host/Dashboard"
@@ -10,6 +10,8 @@ import HostVanDetail from "./assets/host/HostVanDetail"
 import HostVanInfo from "./assets/host/HostVanInfo"
 import HostVanPhotos from "./assets/host/HostVanPhotos"
 import HostVanPricing from "./assets/host/HostVanPricing"
+import NotFound from "./assets/pages/NotFound"
+import Login from "./assets/pages/Login"
 
 import Layout from "./assets/components/Layout"
 import HostLayout from "./assets/components/HostLayout"
@@ -26,6 +28,11 @@ export default function App() {
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
 
+          <Route
+            path="login"
+            element={<Login />}
+          />
+
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
@@ -37,6 +44,7 @@ export default function App() {
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />}/>
         </Route>
       </Routes>
     </BrowserRouter>
