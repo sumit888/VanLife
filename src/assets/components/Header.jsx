@@ -1,7 +1,18 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
 
+
 export default function Header() {
+
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
+
+    function fakeLogOut() {
+        localStorage.removeItem("loggedin")
+    }
   
     return (
         <header>
@@ -31,6 +42,8 @@ export default function Header() {
                         className="login-icon"
                     />
                 </Link>
+
+                 <button onClick={fakeLogOut}>X</button>
             </nav>
         </header>
     )
